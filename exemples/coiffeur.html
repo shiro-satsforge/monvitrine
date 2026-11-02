@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coiffure Léa — Nyon | Salon de coiffure</title>
+<meta name="description" content="Salon de coiffure à Nyon. Coupes, couleurs, soins. Sur rendez-vous, ouvert mardi au samedi. Téléphone : 022 000 00 00.">
+<style>
+  :root{--encre:#1f2933;--gris:#62707d;--accent:#b91c5b;--fond:#fff;--fond2:#f7f4f1;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--encre);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header{padding:16px 0;border-bottom:1px solid #eee}
+  .bar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .logo{font-weight:700;font-size:1.25rem;letter-spacing:.5px}
+  .cta{background:var(--accent);color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600;font-size:.95rem;white-space:nowrap}
+  .hero{background:linear-gradient(120deg,#fdf2f6,#fbe9f0);padding:52px 0 44px;text-align:center}
+  .hero h1{font-size:clamp(1.7rem,4.5vw,2.6rem);line-height:1.15;margin-bottom:12px}
+  .hero p{color:var(--gris);max-width:620px;margin:0 auto 26px;font-size:1.05rem}
+  .btnrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn2{border:2px solid var(--accent);color:var(--accent);text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600}
+  section{padding:44px 0}
+  h2{font-size:1.5rem;margin-bottom:20px;text-align:center}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .card{background:var(--fond2);border-radius:12px;padding:22px;text-align:center}
+  .card b{display:block;margin-bottom:6px;font-size:1.05rem}
+  .card small{color:var(--gris)}
+  .horaires{max-width:440px;margin:0 auto;background:var(--fond2);border-radius:12px;padding:22px}
+  .horaires div{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #e7e2df}
+  .horaires div:last-child{border:none}
+  .contact{text-align:center}
+  .contact a.tel{font-size:1.4rem;font-weight:700;color:var(--accent);text-decoration:none}
+  .adresse{color:var(--gris);margin:10px 0}
+  .map{width:100%;height:280px;border:0;border-radius:12px;margin-top:18px;background:#eee}
+  footer{padding:26px 0;border-top:1px solid #eee;text-align:center;color:var(--gris);font-size:.85rem}
+</style>
+</head>
+<body>
+<div style="background:#16202b;color:#fff;text-align:center;font:14px/1.5 system-ui,sans-serif;padding:9px 14px">Exemple de réalisation MonVitrine — contenu fictif · <a href="../" style="color:#6ee7b7">voir l'offre</a></div>
+
+<header><div class="wrap bar">
+  <div class="logo">Coiffure Léa</div>
+  <a class="cta" href="tel:022 000 00 00">📞 022 000 00 00</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>Votre coiffeur à Nyon</h1>
+  <p>Coupes femme &amp; homme, couleurs, balayages et soins — un accueil chaleureux et un résultat qui vous ressemble, sur rendez-vous.</p>
+  <div class="btnrow">
+    <a class="cta" href="tel:022 000 00 00">Prendre rendez-vous</a>
+    <a class="btn2" href="#contact">Nous trouver</a>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>Nos prestations</h2>
+  <div class="grid">
+    <div class="card"><b>Coupe femme</b><small>Coupe, brushing, coiffage</small></div>
+    <div class="card"><b>Coupe homme</b><small>Coupe classique ou tendance</small></div>
+    <div class="card"><b>Couleur</b><small>Coloration, balayage, mèches</small></div>
+    <div class="card"><b>Soins</b><small>Soins profonds pour cheveux abîmés</small></div>
+  </div>
+</div></section>
+
+<section style="background:var(--fond2)"><div class="wrap">
+  <h2>Horaires</h2>
+  <div class="horaires">
+    <div><span>Lundi</span><span>Fermé</span></div>
+    <div><span>Mardi – Vendredi</span><span>9h00 – 18h30</span></div>
+    <div><span>Samedi</span><span>8h30 – 16h00</span></div>
+    <div><span>Dimanche</span><span>Fermé</span></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2>Contact</h2>
+  <a class="tel" href="tel:022 000 00 00">022 000 00 00</a>
+  <div class="adresse">Rue de la Gare 12, 1260 Nyon<br>Nyon</div>
+  <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q=Nyon&output=embed" title="Plan d'accès"></iframe>
+</div></section>
+
+<footer><div class="wrap">
+  Coiffure Léa — Rue de la Gare 12, 1260 Nyon, Nyon · 022 000 00 00
+<br><small>Site réalisé par <a href="../" style="color:#b91c5b;text-decoration:none">MonVitrine</a> — exemple de démonstration</small></div></footer>
+</body>
+</html>

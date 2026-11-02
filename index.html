@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MonVitrine — votre site web livré en 48 h, 200 à 800 CHF</title>
+<meta name="description" content="Sites vitrine pour commerces, artisans et indépendants en Suisse romande. Livraison en 48 h, forfait unique de 200 à 800 CHF, aucun abonnement, paiement après validation de la maquette.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪟</text></svg>">
+<style>
+  :root{--ink:#16202b;--muted:#5d6b7a;--line:#e3e8ee;--accent:#0f5c4a;--accent2:#12866b;--bg:#f7f9fa;--card:#fff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);z-index:9}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+  .logo{font-weight:800;font-size:19px;letter-spacing:-.3px}
+  .logo i{color:var(--accent2);font-style:normal}
+  nav a{color:var(--muted);text-decoration:none;font-size:15px;margin-left:18px}
+  nav a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:13px 24px;border-radius:9px;font-weight:650;font-size:16px}
+  .btn:hover{background:#0b4437}
+  .btn.ghost{background:#fff;color:var(--accent);border:2px solid var(--accent);padding:11px 22px}
+  .hero{padding:64px 0 56px;text-align:center;background:linear-gradient(180deg,#f4faf8,#fff)}
+  .kicker{display:inline-block;background:#e6f4ef;color:var(--accent);font-size:13px;font-weight:700;padding:5px 13px;border-radius:20px;margin-bottom:18px;letter-spacing:.2px}
+  h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.15;letter-spacing:-.6px;margin-bottom:16px}
+  h1 span{color:var(--accent2)}
+  .lead{color:var(--muted);font-size:1.12rem;max-width:620px;margin:0 auto 30px}
+  .btnrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .micro{font-size:13.5px;color:var(--muted);margin-top:14px}
+  section{padding:56px 0}
+  h2{font-size:1.6rem;letter-spacing:-.3px;margin-bottom:10px}
+  .sub{color:var(--muted);margin-bottom:28px;max-width:640px}
+  .center{text-align:center}.center .sub{margin-left:auto;margin-right:auto}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:24px;background:#fff}
+  .card h3{font-size:1.05rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .steps{counter-reset:s}
+  .step{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .step:last-child{border:none}
+  .step .n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+  .step b{display:block;margin-bottom:2px}
+  .step p{color:var(--muted);font-size:.97rem}
+  .price{background:var(--bg)}
+  .pcard{border:1px solid var(--line);border-radius:14px;padding:26px;background:#fff;display:flex;flex-direction:column}
+  .pcard.best{border:2px solid var(--accent);box-shadow:0 8px 26px rgba(15,92,74,.09)}
+  .pcard .tag{font-size:12.5px;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
+  .pcard .amount{font-size:2rem;font-weight:800;letter-spacing:-1px;margin:6px 0 2px}
+  .pcard .amount small{font-size:.95rem;font-weight:500;color:var(--muted)}
+  .pcard ul{list-style:none;margin:16px 0 22px;flex:1}
+  .pcard li{padding:5px 0 5px 24px;position:relative;font-size:.95rem;color:#33414f}
+  .pcard li:before{content:"✓";position:absolute;left:0;color:var(--accent2);font-weight:800}
+  .pcard a.choose{text-align:center;display:block;padding:11px;border-radius:9px;border:1.5px solid var(--accent);color:var(--accent);text-decoration:none;font-weight:650;font-size:15px}
+  .pcard.best a.choose{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:650;font-size:1rem}
+  .faq p{color:var(--muted);margin-top:8px;font-size:.96rem}
+  .cta-box{background:var(--accent);color:#fff;border-radius:18px;padding:44px 30px;text-align:center}
+  .cta-box h2{color:#fff}
+  .cta-box p{opacity:.92;margin:8px auto 24px;max-width:520px}
+  .cta-box .btn{background:#fff;color:var(--accent)}
+  footer{border-top:1px solid var(--line);padding:28px 0 44px;color:var(--muted);font-size:13.5px;text-align:center}
+  .lang{font-size:13px}
+  .lang a{color:var(--muted);text-decoration:none;margin-left:10px}
+  .lang a.on{color:var(--ink);font-weight:700}
+  [data-l]{display:none}
+  body.fr [data-l=fr],body.de [data-l=de]{display:block}
+  body.fr a[data-l=fr],body.de a[data-l=de]{display:inline-block}
+  body.fr .pcard a[data-l=fr],body.de .pcard a[data-l=de]{display:block}
+  .unused{}
+  @media(max-width:640px){nav{display:none}.hero{padding:44px 0 38px}section{padding:40px 0}}
+</style>
+</head>
+<body class="fr">
+
+<header><div class="wrap bar">
+  <div class="logo">Mon<i>Vitrine</i></div>
+  <nav>
+    <a href="#offre" data-l="fr">Offres</a><a href="#offre" data-l="de">Angebot</a>
+    <a href="#process" data-l="fr">Comment ça marche</a><a href="#process" data-l="de">Ablauf</a>
+    <a href="#faq" data-l="fr">Questions</a><a href="#faq" data-l="de">Fragen</a>
+  </nav>
+  <div class="lang"><a href="#" onclick="setLang('fr');return false" id="lfr" class="on">FR</a><a href="#" onclick="setLang('de');return false" id="lde">DE</a></div>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <span class="kicker" data-l="fr">Service suisse · site livré en 48 h</span>
+  <span class="kicker" data-l="de">Schweizer Service · Website in 48 Std.</span>
+  <h1 data-l="fr">Votre <span>site internet</span><br>livré en 48 heures</h1>
+  <h1 data-l="de">Ihre <span>Website</span><br>in 48 Stunden geliefert</h1>
+  <p class="lead" data-l="fr">Pour les commerces, artisans et indépendants qui n'ont pas encore de site — ou un site qui date de 2014. Forfait unique, aucun abonnement, vous ne payez qu'après validation de la maquette.</p>
+  <p class="lead" data-l="de">Für Geschäfte, Handwerker und Selbstständige ohne Website — oder mit einer von 2014. Einmaliger Preis, kein Abo, Zahlung erst nach Freigabe des Entwurfs.</p>
+  <div class="btnrow">
+    <a class="btn" href="mailto:contact@cryptocompta.ch?subject=Devis%20MonVitrine" data-l="fr">Demander une maquette gratuite</a>
+    <a class="btn" href="mailto:contact@cryptocompta.ch?subject=Angebot%20MonVitrine" data-l="de">Kostenlosen Entwurf anfragen</a>
+    <a class="btn ghost" href="exemples/coiffeur.html" data-l="fr">Voir un exemple</a>
+    <a class="btn ghost" href="exemples/coiffeur.html" data-l="de">Beispiel ansehen</a>
+  </div>
+  <p class="micro" data-l="fr">Réponse sous 24 h · devis gratuit, sans engagement · pas de frais cachés</p>
+  <p class="micro" data-l="de">Antwort innert 24 Std. · kostenlos und unverbindlich · keine versteckten Kosten</p>
+</div></div>
+
+<section><div class="wrap">
+  <h2 data-l="fr">Ce qui coince aujourd'hui</h2>
+  <h2 data-l="de">Was heute fehlt</h2>
+  <p class="sub" data-l="fr">Vos clients vous cherchent sur leur téléphone avant de se déplacer. Sans site, vous n'existez pas dans cette recherche : ils trouvent le concurrent qui, lui, en a un.</p>
+  <p class="sub" data-l="de">Ihre Kunden suchen zuerst auf dem Handy. Ohne Website existieren Sie bei dieser Suche nicht — sie landen beim Konkurrenten, der eine hat.</p>
+  <div class="grid3">
+    <div class="card"><h3 data-l="fr">Une page Facebook ne suffit pas</h3><h3 data-l="de">Eine Facebook-Seite reicht nicht</h3>
+      <p data-l="fr">Un profil social sert à garder le contact, pas à être trouvé par quelqu'un qui ne vous connaît pas encore. Google indexe les sites, pas les pages Facebook.</p>
+      <p data-l="de">Ein Social-Profil hält Kontakt, wird aber von Neukunden nicht gefunden. Google indexiert Websites, nicht Facebook-Seiten.</p></div>
+    <div class="card"><h3 data-l="fr">Les agences sont hors de prix</h3><h3 data-l="de">Agenturen sind zu teuer</h3>
+      <p data-l="fr">Entre 3 000 et 8 000 CHF pour un site vitrine, plus un abonnement mensuel. Pour une coiffeuse ou un garagiste, le calcul ne passe jamais.</p>
+      <p data-l="de">3 000 bis 8 000 CHF für eine Visitenkarten-Website, plus Monatsabo. Für einen Coiffeur oder eine Garage rechnet sich das nie.</p></div>
+    <div class="card"><h3 data-l="fr">Ça prend des semaines</h3><h3 data-l="de">Es dauert Wochen</h3>
+      <p data-l="fr">Trois rendez-vous, deux relances, un site qui arrive trois mois plus tard. Nous livrons en 48 h après votre validation du contenu.</p>
+      <p data-l="de">Drei Termine, zwei Nachfragen, Website nach drei Monaten. Bei uns: 48 Std. nach Freigabe der Inhalte.</p></div>
+  </div>
+</div></section>
+
+<section id="offre" class="price"><div class="wrap">
+  <div class="center">
+    <h2 data-l="fr">Trois formules, un paiement unique</h2>
+    <h2 data-l="de">Drei Pakete, eine einmalige Zahlung</h2>
+    <p class="sub" data-l="fr">Prix fixes en CHF, TVA incluse. Pas d'abonnement, pas de frais de mise en service, le site vous appartient.</p>
+    <p class="sub" data-l="de">Fixpreise in CHF, inkl. MWST. Kein Abo, keine Einrichtungsgebühr, die Website gehört Ihnen.</p>
+  </div>
+  <div class="grid3">
+    <div class="pcard">
+      <div class="tag" data-l="fr">Essentiel</div><div class="tag" data-l="de">Basis</div>
+      <h3 data-l="fr">Page unique</h3><h3 data-l="de">Eine Seite</h3>
+      <div class="amount">200 <small>CHF</small></div>
+      <ul data-l="fr"><li>1 page (présentation, horaires, contact)</li><li>Parfait sur mobile</li><li>Optimisée Google (titre, description, plan)</li><li>Livrée en 48 h</li></ul>
+      <ul data-l="de"><li>1 Seite (Vorstellung, Öffnungszeiten, Kontakt)</li><li>Perfekt auf dem Handy</li><li>Google-optimiert (Titel, Beschreibung, Karte)</li><li>In 48 Std. geliefert</li></ul>
+      <a class="choose" href="mailto:contact@cryptocompta.ch?subject=MonVitrine%20-%20Page%20unique" data-l="fr">Choisir</a>
+      <a class="choose" href="mailto:contact@cryptocompta.ch?subject=MonVitrine%20-%20Basis" data-l="de">Wählen</a>
+    </div>
+    <div class="pcard best">
+      <div class="tag" data-l="fr">Le plus demandé</div><div class="tag" data-l="de">Am häufigsten</div>
+      <h3 data-l="fr">Site vitrine complet</h3><h3 data-l="de">Komplette Website</h3>
+      <div class="amount">500 <small>CHF</small></div>
+      <ul data-l="fr"><li>4 à 5 pages (accueil, services, tarifs, à propos, contact)</li><li>Vos photos et votre carte/menu</li><li>Formulaire de contact</li><li>Fiche Google Business optimisée</li><li>1 mois de modifications incluses</li></ul>
+      <ul data-l="de"><li>4–5 Seiten (Start, Leistungen, Preise, Über uns, Kontakt)</li><li>Ihre Fotos und Karte/Speisekarte</li><li>Kontaktformular</li><li>Google-Business-Profil optimiert</li><li>1 Monat Änderungen inklusive</li></ul>
+      <a class="choose" href="mailto:contact@cryptocompta.ch?subject=MonVitrine%20-%20Site%20complet" data-l="fr">Choisir</a>
+      <a class="choose" href="mailto:contact@cryptocompta.ch?subject=MonVitrine%20-%20Komplett" data-l="de">Wählen</a>
+    </div>
+    <div class="pcard">
+      <div class="tag" data-l="fr">Sur mesure</div><div class="tag" data-l="de">Massgeschneidert</div>
+      <h3 data-l="fr">Vitrine + réservation</h3><h3 data-l="de">Website + Buchung</h3>
+      <div class="amount">800 <small>CHF</small></div>
+      <ul data-l="fr"><li>Jusqu'à 10 pages</li><li>Prise de rendez-vous en ligne</li><li>Galerie photos / réalisations</li><li>Réseaux sociaux reliés</li><li>2 mois de modifications incluses</li></ul>
+      <ul data-l="de"><li>Bis 10 Seiten</li><li>Online-Terminbuchung</li><li>Fotogalerie / Referenzen</li><li>Social Media angebunden</li><li>2 Monate Änderungen inklusive</li></ul>
+      <a class="choose" href="mailto:contact@cryptocompta.ch?subject=MonVitrine%20-%20Reservation" data-l="fr">Choisir</a>
+      <a class="choose" href="mailto:contact@cryptocompta.ch?subject=MonVitrine%20-%20Buchung" data-l="de">Wählen</a>
+    </div>
+  </div>
+  <p class="micro" style="text-align:center;margin-top:18px" data-l="fr">Nom de domaine et hébergement : 60 CHF la première année, puis 60 CHF/an — sans marge cachée, facturés au prix du registraire.</p>
+  <p class="micro" style="text-align:center;margin-top:18px" data-l="de">Domainname und Hosting: 60 CHF im ersten Jahr, danach 60 CHF/Jahr — zum Einkaufspreis des Registrars, ohne Aufschlag.</p>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <h2 data-l="fr">Comment ça se passe</h2>
+  <h2 data-l="de">So läuft es ab</h2>
+  <p class="sub" data-l="fr">Quatre étapes, votre temps total : environ 15 minutes.</p>
+  <p class="sub" data-l="de">Vier Schritte, Ihr Aufwand: rund 15 Minuten.</p>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div>
+      <b data-l="fr">Vous nous écrivez</b><b data-l="de">Sie schreiben uns</b>
+      <p data-l="fr">Un email suffit : votre activité, votre ville, ce que vous voulez montrer. Vous n'avez rien à préparer.</p>
+      <p data-l="de">Eine E-Mail genügt: Tätigkeit, Ort, was gezeigt werden soll. Sie müssen nichts vorbereiten.</p></div></div>
+    <div class="step"><div class="n">2</div><div>
+      <b data-l="fr">Maquette gratuite sous 48 h</b><b data-l="de">Kostenloser Entwurf in 48 Std.</b>
+      <p data-l="fr">Nous construisons une première version avec votre nom, vos couleurs, vos services. Vous la regardez sur votre téléphone.</p>
+      <p data-l="de">Wir bauen eine erste Version mit Ihrem Namen, Ihren Farben, Ihren Leistungen. Sie schauen sie auf dem Handy an.</p></div></div>
+    <div class="step"><div class="n">3</div><div>
+      <b data-l="fr">Vous validez — et vous payez</b><b data-l="de">Sie geben frei — und zahlen</b>
+      <p data-l="fr">Aucun paiement avant que la maquette vous plaise. Si elle ne vous plaît pas, vous ne payez rien et vous gardez vos remarques.</p>
+      <p data-l="de">Keine Zahlung, bevor der Entwurf Ihnen gefällt. Gefällt er nicht, zahlen Sie nichts.</p></div></div>
+    <div class="step"><div class="n">4</div><div>
+      <b data-l="fr">Mise en ligne</b><b data-l="de">Livegang</b>
+      <p data-l="fr">Votre site est publié sur votre domaine, avec votre fiche Google. Nous restons joignables pour les modifications.</p>
+      <p data-l="de">Ihre Website geht auf Ihrer Domain online, mit Ihrem Google-Profil. Für Änderungen bleiben wir erreichbar.</p></div></div>
+  </div>
+</div></section>
+
+<section id="faq" style="background:var(--bg)"><div class="wrap">
+  <h2 data-l="fr">Questions fréquentes</h2>
+  <h2 data-l="de">Häufige Fragen</h2>
+  <div class="faq">
+    <details><summary data-l="fr">Qui êtes-vous ?</summary><summary data-l="de">Wer sind Sie?</summary>
+      <p data-l="fr">MonVitrine est un petit studio suisse de création de sites vitrines. Nous travaillons à distance, sans local, ce qui nous permet de rester 3 à 10 fois moins chers qu'une agence — et de livrer en 48 h plutôt qu'en trois mois.</p>
+      <p data-l="de">MonVitrine ist ein kleines Schweizer Studio für Visitenkarten-Websites. Wir arbeiten remote, ohne Büro — darum sind wir 3- bis 10-mal günstiger als eine Agentur und liefern in 48 Std. statt in drei Monaten.</p></details>
+    <details><summary data-l="fr">Je paye comment ?</summary><summary data-l="de">Wie bezahle ich?</summary>
+      <p data-l="fr">Par facture : virement bancaire ou bitcoin. Le paiement intervient après validation de la maquette, jamais avant.</p>
+      <p data-l="de">Per Rechnung: Banküberweisung oder Bitcoin. Zahlung nach Freigabe des Entwurfs, nie vorher.</p></details>
+    <details><summary data-l="fr">Et si je veux des changements plus tard ?</summary><summary data-l="de">Und wenn ich später etwas ändern will?</summary>
+      <p data-l="fr">Les modifications sont facturées à l'heure (80 CHF) ou par petits forfaits. Le premier mois est inclus dans les formules 500 et 800 CHF.</p>
+      <p data-l="de">Änderungen werden pro Stunde (80 CHF) oder als kleines Paket verrechnet. Der erste Monat ist bei den Paketen 500 und 800 CHF inklusive.</p></details>
+    <details><summary data-l="fr">Le site m'appartient vraiment ?</summary><summary data-l="de">Gehört die Website wirklich mir?</summary>
+      <p data-l="fr">Oui. Le nom de domaine est enregistré à votre nom et le site est livré avec ses fichiers. Vous pouvez partir avec, sans rien nous devoir.</p>
+      <p data-l="de">Ja. Die Domain läuft auf Ihren Namen, die Website wird mit allen Dateien geliefert. Sie können jederzeit gehen, ohne etwas zu schulden.</p></details>
+    <details><summary data-l="fr">Travaillez-vous aussi en allemand ?</summary><summary data-l="de">Arbeiten Sie auch auf Französisch?</summary>
+      <p data-l="fr">Oui, sites en français, allemand ou bilingue.</p>
+      <p data-l="de">Ja, Websites auf Deutsch, Französisch oder zweisprachig.</p></details>
+  </div>
+</div></section>
+
+<section><div class="wrap"><div class="cta-box">
+  <h2 data-l="fr">Voyez votre site avant de payer</h2>
+  <h2 data-l="de">Sehen Sie Ihre Website, bevor Sie zahlen</h2>
+  <p data-l="fr">Envoyez-nous le nom de votre commerce. Nous vous renvoyons une maquette gratuite sous 48 heures — vous décidez ensuite.</p>
+  <p data-l="de">Senden Sie uns den Namen Ihres Betriebs. Sie erhalten innert 48 Stunden einen kostenlosen Entwurf — dann entscheiden Sie.</p>
+  <a class="btn" href="mailto:contact@cryptocompta.ch?subject=Maquette%20gratuite%20MonVitrine">contact@cryptocompta.ch</a>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div>MonVitrine — sites vitrines pour commerces et indépendants en Suisse</div>
+  <div style="margin-top:6px">contact@cryptocompta.ch · Mon–Fri 9h–18h · © 2026</div>
+</div></footer>
+
+<script>
+function setLang(l){
+  document.body.className=l;
+  document.documentElement.lang=l;
+  document.getElementById('lfr').className = l==='fr'?'on':'';
+  document.getElementById('lde').className = l==='de'?'on':'';
+  try{localStorage.setItem('mv_lang',l)}catch(e){}
+}
+try{var s=localStorage.getItem('mv_lang'); if(s==='de') setLang('de');}catch(e){}
+</script>
+</body>
+</html>
